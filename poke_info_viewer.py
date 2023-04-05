@@ -5,8 +5,8 @@ from tkinter import messagebox
 
 #Creating the window
 root = Tk()
-root.title=("Pokemon Info Viewer")
-#root.resizable(False, False)
+root.title("Pokemon Info Viewer")
+root.resizable(False, False)
 
 #Add Widget to windows
 frm_top = ttk.Frame(root)
@@ -98,7 +98,7 @@ lbl_special_defense.grid(row=4, column=0)
 bar_special_defense = ttk.Progressbar(frm_btm_right, orient=HORIZONTAL, length=200, maximum=255)
 bar_special_defense.grid(row=4, column=1)
 
-lbl_speed = ttk.Label(frm_btm_right, text='Defense:')
+lbl_speed = ttk.Label(frm_btm_right, text='Speed:')
 lbl_speed.grid(row=5, column=0)
 bar_speed = ttk.Progressbar(frm_btm_right, orient=HORIZONTAL, length=200, maximum=255)
 bar_speed.grid(row=5, column=1)

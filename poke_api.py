@@ -25,8 +25,15 @@ def get_pokemon_info(pokemon_name):
     # Check if the request was successful
     if resp_msg.status_code == requests.codes.ok:
         print('success')
+       #Extract pokemon info from JSON response
+        pokemon_info = resp_msg.json()
+        
+        #Extract type information from pokemon_info and add it to the dictionary
+        pokemon_type = [t['type']['name'] for t in pokemon_info['types']]
+        pokemon_info['type'] = pokemon_type
+        
         #Return dictionary of pokemon info
-        return resp_msg.json()
+        return pokemon_info
     else:
         print('failure')
         print(f'Response code: {resp_msg.status_code} ({resp_msg.content})')
