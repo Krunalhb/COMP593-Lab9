@@ -2,8 +2,6 @@ import requests
 
 POKE_API_URL = "https://pokeapi.co/api/v2/pokemon/"
 
-def main():
-
 def get_pokemon_info(pokemon_name):
     """
     Gets information about a specified Pokémon from the PokéAPI.
@@ -33,6 +31,14 @@ def get_pokemon_info(pokemon_name):
         print('failure')
         print(f'Response code: {resp_msg.status_code} ({resp_msg.content})')
         return
-    
+
+def main():
+ pokemon_name = input('Enter a Pokemon name: ')
+ pokemon_info = get_pokemon_info(pokemon_name)
+ if pokemon_info:
+        print(pokemon_info)
+ else:
+        print(f"Couldn't fetch information for {pokemon_name}.")
+
 if __name__=='__main__':
     main() 
